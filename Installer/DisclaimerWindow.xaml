@@ -1,0 +1,35 @@
+﻿<Window x:Class="Install.DisclaimerWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Install"
+        Title="Welcome" 
+        Background="#333333"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight"
+        >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Custom Title Bar -->
+        <local:TitleBar TitleText="Welcome"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="400" Margin="30">
+
+            <TextBox Name="txtDisclaimer" Text="{local:TextFile Source='pack://application:,,,/Resources/disclaimer.txt'}"  Width="400" Height="250" Background="#333" Foreground="White" BorderBrush="Gray"
+                 VerticalScrollBarVisibility="Auto"
+                 HorizontalScrollBarVisibility="Auto"
+                 TextWrapping="Wrap"
+                     />
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Name="btnAccept" Content="CONTINUE" Width="120" Height="30" Background="#5c5c5c" Foreground="White" Margin="5" Click="btnAccept_Click"/>
+                <Button Name="btnClose" Content="EXIT" Width="120" Height="30" Background="#5c5c5c" Foreground="White" Margin="5" Click="btnClose_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

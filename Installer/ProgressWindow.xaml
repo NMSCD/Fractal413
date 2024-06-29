@@ -1,0 +1,29 @@
+﻿<Window x:Class="Install.ProgressWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:Install"
+        Title="Installation Status"
+        Background="#333333"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Custom Title Bar -->
+        <local:TitleBar TitleText="Installation Status"/>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Margin="30">
+
+            <TextBlock Name="txtStatus" Text="Verifying..." Foreground="White" Margin="0,0,0,5"/>
+            <ProgressBar Name="pbProgressBar" Width="500" Height="30" BorderBrush="Gray" Foreground="#3C3C68" />
+
+
+
+        </StackPanel>
+    </Grid>
+</Window>

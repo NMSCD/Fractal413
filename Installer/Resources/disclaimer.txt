@@ -1,0 +1,66 @@
+Welcome to Project Fractal 413. This application installs No Man's Sky 4.13 (Fractal Update) from Steam and converts it to the GOG 4.13 version which includes:
+
+* PDB (Program Database) files.
+* Debug Version of No Man's Sky.
+
+Project page: https://github.com/nmscd/Fractal413
+
+IMPORTANT
+**(1) The user must have a valid, purchased copy of No Man's Sky on Steam and provide their own Steam account details to use this application.**
+**(2) Steam Login details are required for this program to work and are not logged or shared.**
+**(3) PDB Files and Debug Version require a valid Steam NMS.exe to reproduce.**
+
+ABOUT
+This installer was created to make it easier for other users to obtain this specific version of the game.
+
+The NMS.PDB file was included with the GOG version of No Man's Sky 4.13 and provides a map to all the types, objects, classes and functions in the NMS.EXE game engine, which has enabled the creation of advanced mods and tools.
+
+GOG do not provide access to previous installer versions, where as it is currently possible to download old versions from Steam using their Manifest and Depot system.
+
+PATCHES
+Minimal game data is included with this application. 
+Changed and additional EXE and PDB files are produced using the NMS.exe from Steam as a "key" and *cannot be reproduced without it*.
+
+NMS.exe.xdelta3 - Patch to create GOG 4.13 Executable
+nms.pdb.xdelta3 - Patch to create Program Database File
+XGOG Release_x64.exe.xdelta3 - Patch to create GOG 4.13 Debug Version Executable
+xgog release_x64.pdb.xdelta3 - Patch to create Debug Version Program Database File
+
+FILES
+NMS.lib - Object Library included with GOG 4.13
+XGOG Release_x64.lib - Object Library included with GOG 4.13 Debug Version
+
+NMS.exp - Exports Library File included with GOG 4.13
+XGOG Release_x64.exp - Exports Library File included with GOG 4.13 Debug Version
+
+Galaxy64.dll - GOG Galaxy Client
+goggame-1446213994.dll - Windows Game Explorer integration
+Ninja_x64_Release.dll - Ninja Build System
+dbghelp_x64.dll - Windows DbgHelp library
+
+DISCLAIMER
+The creators of the application do not condone or support piracy, and users are reminded that it is illegal to distribute or use pirated software.
+
+The use of this application is at the user's own risk, and the creators of the application cannot be held responsible for any damages that may result from its use. This includes, but is not limited to, any damage to the user's computer, loss of data, or legal repercussions.
+
+Users are advised to exercise caution when using this application and to ensure that they are complying with all applicable laws and regulations. The creators of the application are not responsible for any misuse or illegal activity associated with the use of this application.
+
+TOOLS USED / INCLUDED
+SteamKit2 and DepotDownloader by OpenSteamworks - https://github.com/SteamRE
+LICENSE: GNU General Public License v2.0
+- Used to login to steam and download the old version of the game.
+
+XDelta by jmacd - https://github.com/jmacd/xdelta
+LICENSE: Apache Public License version 2.0
+- Used to apply xdelta3 patches
+
+RunAsDate by nirsoft - https://www.nirsoft.net/utils/run_as_date.html
+LICENSE: Freeware
+- Used to bypass cutoff date for Debug Version
+
+SmartSaveFolder by qjimbo - https://github.com/qjimbo/smartsavefolder
+LICENSE: MIT License
+- Helper application to redirect NMS save game folder.
+
+SEE ALSO
+No Man's Sky Legacy Version installer - https://github.com/qjimbo/NMSLegacyVersionInstaller/

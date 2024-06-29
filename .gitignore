@@ -3,3 +3,8 @@
 ################################################################################
 
 /Download/bin
+/Download/obj
+/Installer/bin
+/Installer/obj
+/Restore/bin
+/Restore/obj
