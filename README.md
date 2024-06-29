@@ -26,22 +26,19 @@ The use of this application is at the user's own risk, and the creators of the a
 
 Users are advised to exercise caution when using this application and to ensure that they are complying with all applicable laws and regulations. The creators of the application are not responsible for any misuse or illegal activity associated with the use of this application.
 
-# Tools used and Included
+# Tools Used and Included
 * SteamKit2 and DepotDownloader by OpenSteamworks - https://github.com/SteamRE
-LICENSE: GNU General Public License v2.0
-Used to login to steam and download the old version of the game.
-
+  * LICENSE: GNU General Public License v2.0
+  * Used to login to steam and download the old version of the game.
 * XDelta by jmacd - https://github.com/jmacd/xdelta
-LICENSE: Apache Public License version 2.0
-Used to apply xdelta3 patches
-
+  * LICENSE: Apache Public License version 2.0
+  * Used to apply xdelta3 patches
 * RunAsDate by nirsoft - https://www.nirsoft.net/utils/run_as_date.html
-LICENSE: Freeware
-Used to bypass cutoff date for Debug Version
-
+  * LICENSE: Freeware
+  * Used to bypass cutoff date for Debug Version
 * SmartSaveFolder by qjimbo - https://github.com/qjimbo/smartsavefolder
-LICENSE: MIT License
-Helper application to redirect NMS save game folder.
+  * LICENSE: MIT License
+  * Helper application to redirect NMS save game folder.
 
 # See Also
 No Man's Sky Legacy Version installer - https://github.com/qjimbo/NMSLegacyVersionInstaller/
