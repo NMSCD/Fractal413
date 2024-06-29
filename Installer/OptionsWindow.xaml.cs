@@ -1,7 +1,7 @@
 ﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Win32;
 
 namespace Install
 {
@@ -10,6 +10,8 @@ namespace Install
     /// </summary>
     public partial class OptionsWindow : Window
     {
+        private string baseInstallPath = string.Empty;
+
         public OptionsWindow()
         {
             InitializeComponent();
@@ -20,7 +22,36 @@ namespace Install
             var dialog = new System.Windows.Forms.FolderBrowserDialog();
             if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                txtInstallLocation.Text = dialog.SelectedPath;
+                baseInstallPath = dialog.SelectedPath;
+                UpdateInstallPath();
+            }
+        }
+
+        private void chkCreateFractalFolder_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateInstallPath();
+        }
+
+        private void chkCreateFractalFolder_Unchecked(object sender, RoutedEventArgs e)
+        {
+            UpdateInstallPath();
+        }
+
+        private void UpdateInstallPath()
+        {
+            if (string.IsNullOrEmpty(baseInstallPath))
+            {
+                txtInstallLocation.Text = "No folder selected";
+                return;
+            }
+
+            if (chkCreateFractalFolder.IsChecked == true)
+            {
+                txtInstallLocation.Text = Path.Combine(baseInstallPath, "Fractal413");
+            }
+            else
+            {
+                txtInstallLocation.Text = baseInstallPath;
             }
         }
 
@@ -35,7 +66,7 @@ namespace Install
                 return;
             }
 
-            Statics.LoginWindow.Show();           
+            Statics.LoginWindow.Show();
             this.Hide();
         }
 
