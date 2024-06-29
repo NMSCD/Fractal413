@@ -41,5 +41,5 @@ Users are advised to exercise caution when using this application and to ensure 
   * Helper application to redirect NMS save game folder.
 
 # See Also
-No Man's Sky Legacy Version installer - https://github.com/qjimbo/NMSLegacyVersionInstaller/
-TerrariaDepotDownloader - https://github.com/RussDev7/TerrariaDepotDownloader/
+* No Man's Sky Legacy Version installer - https://github.com/qjimbo/NMSLegacyVersionInstaller/
+* TerrariaDepotDownloader - https://github.com/RussDev7/TerrariaDepotDownloader/
