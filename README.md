@@ -1,4 +1,5 @@
 # Project Fractal413
+![logo](https://github.com/NMSCD/Fractal413/assets/21266513/743ee9bf-a5d1-4f27-a2b5-9539318d0ed4)
 [![Supported by the No Man's Sky Community Developers & Designers](https://raw.githubusercontent.com/NMSCD/About/master/badge/green-ftb.svg)](https://github.com/NMSCD)
 
 Project Fractal 413 is an application which installs No Man's Sky 4.13 (Fractal Update) from Steam using DepotDownloader, and converts it to the GOG 4.13 version which includes PDB (Program Database) files and Debug Version of No Man's Sky.
@@ -7,7 +8,7 @@ Project Fractal 413 is an application which installs No Man's Sky 4.13 (Fractal 
 On February 22nd 2023, Hello Games released the Fractal update 4.10 on GOG.com. This version of the game included an *nms.pdb* file, as well as a debug version of No Man's Sky titled *XGOG Release_x64.exe*. These assets were also included in version 4.12 released March 1st 2023, and version 4.13 released March 8th 2023, publicly available to all users who purchased No Man's Sky through GOG.com. However in subsequent GOG releases, and Steam releases, these files were no longer included.
 
 # Purpose
-The *nms.pdb* file has been invaluable to the modding community, as it provides a map to all the types, objects, classes and functions in the NMS.EXE game engine, which has enabled the creation of advanced mods and tools which support NMS 4.13, such as [NMS.py](https://github.com/monkeyman192/NMS.py) by monkeyman192 and [ReNMS](https://github.com/VITALISED/renms) by VITALISED. However these mods target the 4.13 version which is difficult to install and obtain for the average user, which is why this isntaller has been created.
+The *nms.pdb* file has been invaluable to the modding community, as it provides a map to all the types, objects, classes and functions in the NMS.EXE game engine, which has enabled the creation of advanced mods and tools which support NMS 4.13, such as [NMS.py](https://github.com/monkeyman192/NMS.py) by monkeyman192 and [ReNMS](https://github.com/VITALISED/renms) by VITALISED. However these mods target the 4.13 version which is difficult to install and obtain for the average user, which is why this installer has been created.
 
 Additionally, as these files are no longer easily available, this project serves as a *software preservation* effort.
 
@@ -26,21 +27,22 @@ The use of this application is at the user's own risk, and the creators of the a
 Users are advised to exercise caution when using this application and to ensure that they are complying with all applicable laws and regulations. The creators of the application are not responsible for any misuse or illegal activity associated with the use of this application.
 
 # Tools used and Included
-SteamKit2 and DepotDownloader by OpenSteamworks - https://github.com/SteamRE
+* SteamKit2 and DepotDownloader by OpenSteamworks - https://github.com/SteamRE
 LICENSE: GNU General Public License v2.0
-- Used to login to steam and download the old version of the game.
+Used to login to steam and download the old version of the game.
 
-XDelta by jmacd - https://github.com/jmacd/xdelta
+* XDelta by jmacd - https://github.com/jmacd/xdelta
 LICENSE: Apache Public License version 2.0
-- Used to apply xdelta3 patches
+Used to apply xdelta3 patches
 
-RunAsDate by nirsoft - https://www.nirsoft.net/utils/run_as_date.html
+* RunAsDate by nirsoft - https://www.nirsoft.net/utils/run_as_date.html
 LICENSE: Freeware
-- Used to bypass cutoff date for Debug Version
+Used to bypass cutoff date for Debug Version
 
-SmartSaveFolder by qjimbo - https://github.com/qjimbo/smartsavefolder
+* SmartSaveFolder by qjimbo - https://github.com/qjimbo/smartsavefolder
 LICENSE: MIT License
-- Helper application to redirect NMS save game folder.
+Helper application to redirect NMS save game folder.
 
 # See Also
 No Man's Sky Legacy Version installer - https://github.com/qjimbo/NMSLegacyVersionInstaller/
+TerrariaDepotDownloader - https://github.com/RussDev7/TerrariaDepotDownloader/
