@@ -7,8 +7,19 @@
 
 Project Fractal 413 is an application which installs No Man's Sky 4.13 (Fractal Update) from Steam using DepotDownloader, and converts it to the GOG 4.13 version which includes PDB (Program Database) files and Debug Version of No Man's Sky.
 
+| ![debug_version](https://github.com/NMSCD/Fractal413/assets/21266513/a8a294dc-6e38-47e1-88b8-3bc1e321288d)|
+|:-------------------------------------------:|
+| *No Man's Sky 4.13 Debug Version*           |
+
 # Download
 Download the latest version of the installer [here](https://github.com/NMSCD/Fractal413/releases/latest).
+
+# Projects that target No Man's Sky 4.13
+* [NMS.py](https://github.com/monkeyman192/NMS.py) by monkeyman192
+  - A Python library for parsing and editing No Man's Sky data files. It provides tools for reading, modifying, and writing game data, with extensive documentation and command-line tools to support various tasks.
+
+* [ReNMS](https://github.com/VITALISED/renms) by VITALISED
+  - A toolkit for the No Man's Sky modding community, offering scripts and utilities for mod creation, file management, compatibility checks, and automation. It includes community resources and supports efficient modding processes.
 
 # Background
 On February 22nd 2023, Hello Games released the Fractal update 4.10 on GOG.com. This version of the game included an *nms.pdb* file, as well as a debug version of No Man's Sky titled *XGOG Release_x64.exe*. These assets were also included in version 4.12 released March 1st 2023, and version 4.13 released March 8th 2023, publicly available to all users who purchased No Man's Sky through GOG.com. However in subsequent GOG releases, and Steam releases, these files were no longer included.
