@@ -35,9 +35,9 @@ namespace Install
             }
             Dispatcher.BeginInvoke(new Action(delegate
             {
-                Statics.ProgressWindow.txtStatus.Text = text;
-                Statics.ProgressWindow.pbProgressBar.IsIndeterminate = isindeterminate;
-                Statics.ProgressWindow.pbProgressBar.Value = progress;
+                Windows.ProgressWindow.txtStatus.Text = text;
+                Windows.ProgressWindow.pbProgressBar.IsIndeterminate = isindeterminate;
+                Windows.ProgressWindow.pbProgressBar.Value = progress;
             }));
         }
 

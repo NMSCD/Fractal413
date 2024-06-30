@@ -49,7 +49,7 @@ namespace Install
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-            Window.GetWindow(this).Close();
+            Windows.WindowClose(Window.GetWindow(this));
         }
     }
 }

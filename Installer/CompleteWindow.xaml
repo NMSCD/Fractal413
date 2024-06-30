@@ -45,7 +45,7 @@
                         Click="StartNMSFractalDebug_Click"/>
                 <TextBlock Text="Starts the debug version of the game." HorizontalAlignment="Center" Foreground="White" Margin="0,0,0,10"/>
 
-                <!-- New Button for Start No Man's Sky Fractal 4.13 -->
+                <!-- New Button to Open The Installation Folder -->
                 <Button Name="OpenFolder"
                         Content="Open Installation Folder"
                         Width="300"
@@ -54,6 +54,16 @@
                         Foreground="White"
                         Margin="5,5,5,15"
                         Click="OpenFolder_Click"/>
+
+                <!-- New Button to Open The Project Website -->
+                <Button Name="OpenWeb"
+                        Content="Open Project GitHub"
+                        Width="300"
+                        Height="30"
+                        Background="#5c5c5c"
+                        Foreground="White"
+                        Margin="5,5,5,15"
+                        Click="OpenWeb_Click"/>
 
                 <!-- New Button for Start SmartSaveFolder -->
                 <Button Name="StartSmartSaveFolder"

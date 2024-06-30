@@ -15,13 +15,15 @@ namespace Install
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
             OnSteamGuardCodeEntered?.Invoke(txtSteamGuard.Text);
-            this.Hide();
+            Windows.WindowClose(this);
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Statics.LoginWindow.Show();
             this.Hide();
+            Download.DownloadActions.TerminateProcess();
+            Windows.ProgressWindow.Hide();
+            Windows.LoginWindow.Show();            
         }
     }
 }

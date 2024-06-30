@@ -10,6 +10,7 @@ namespace Download
     {
         private static Process _process;
         public static int _retryCount = 0;
+        public static bool _interrupted = false;
         public static string _args = "";
         public static Action<DownloadActionType, string, float> _callback = null;
 
@@ -17,7 +18,7 @@ namespace Download
         {
             Status,
             Input,
-            Error,
+            FatalError,            
             Complete
         }
 
@@ -38,6 +39,7 @@ namespace Download
 
         public static void DepotDownloader()
         {
+            _interrupted = false;
             string depotDownloader = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "3rdParty\\DepotDownloader.exe");
 
             Thread downloadThread = new Thread(() =>
@@ -72,11 +74,15 @@ namespace Download
                     outputThread.Join();
                     errorThread.Join();
 
-                    _callback(DownloadActionType.Complete, "Process completed.", 0);
+                    if (!_interrupted)
+                    {                        
+                        _callback(DownloadActionType.Complete, "Process completed.", 0);
+                    }
+                    
                 }
                 catch (Exception ex)
                 {
-                    _callback(DownloadActionType.Error, ex.Message, 0);
+                    _callback(DownloadActionType.FatalError, ex.Message, 0);
                     TerminateProcess();
                 }
             });
@@ -136,17 +142,19 @@ namespace Download
             }
             else if (data.Contains("Error"))
             {                
-                if(data.ToLower().Contains("password") || _retryCount >= 3)
-                {
-                    callback(DownloadActionType.Error, data, 0);
-                } else {
-                    // Retry
-                    _retryCount++;
+                if (data.ToLower().Contains("password") || _retryCount >= 3)
+                {                    
+                    callback(DownloadActionType.FatalError, data, 0); // Fatal Error
                     TerminateProcess();
-                    DepotDownloader();
                     return;
                 }
+
+                // Retry
+                callback(DownloadActionType.Status, "Retrying after Error: " + data, 0);                
+                _retryCount++;
                 TerminateProcess();
+                DepotDownloader();
+                return;                                
             }
             else if (data.Contains("%"))
             {
@@ -185,8 +193,9 @@ namespace Download
             }
         }
 
-        private static void TerminateProcess()
+        public static void TerminateProcess()
         {
+            _interrupted = true;
             try
             {
                 if (_process != null && !_process.HasExited)

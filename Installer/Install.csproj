@@ -73,7 +73,7 @@
       <DependentUpon>OptionsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShortcutManager.cs" />
-    <Compile Include="Statics.cs" />
+    <Compile Include="Windows.cs" />
     <Compile Include="Functions.cs" />
     <Compile Include="SteamGuardWindow.xaml.cs">
       <DependentUpon>SteamGuardWindow.xaml</DependentUpon>

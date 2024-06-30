@@ -50,13 +50,12 @@ namespace Install
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {            
             Functions.DoDownload();
-            this.Hide();
+            Windows.WindowClose(this, Windows.ProgressWindow);
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
-            this.Close();
+            Windows.WindowClose(this, Windows.OptionsWindow);
         }
 
         public void SetErrorText(string errorText)

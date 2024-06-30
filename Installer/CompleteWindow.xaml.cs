@@ -11,15 +11,9 @@ namespace Install
     /// </summary>
     public partial class CompleteWindow : Window
     {
-        string installPath;
         public CompleteWindow()
         {
-            InitializeComponent();
-            installPath = Statics.OptionsWindow.txtInstallLocation.Text;
-            try { Statics.LoginWindow.Close(); } catch { }
-            try { Statics.ProgressWindow.Close(); } catch { }
-            try { Statics.SteamGuardWindow.Close(); } catch { }
-            try { Statics.OptionsWindow.Close(); } catch { }
+            InitializeComponent();           
         }
      
         private void btnCancel_Click(object sender, RoutedEventArgs e)
@@ -30,13 +24,13 @@ namespace Install
 
         private void StartNMSFractal_Click(object sender, RoutedEventArgs e)
         {
-            string path = System.IO.Path.Combine(installPath, "Binaries\\NMS.exe");
+            string path = System.IO.Path.Combine(Windows.OptionsWindow.txtInstallLocation.Text, "Binaries\\NMS.exe");
             Process.Start(path);
         }
 
         private void StartNMSFractalDebug_Click(object sender, RoutedEventArgs e)
         {
-            string path = System.IO.Path.Combine(installPath, "Binaries\\No Man's Sky Fractal 4.13 (Debug Version).lnk");
+            string path = System.IO.Path.Combine(Windows.OptionsWindow.txtInstallLocation.Text, "Binaries\\No Man's Sky Fractal 4.13 (Debug Version).lnk");
             Process.Start(path);
         }
 
@@ -49,10 +43,15 @@ namespace Install
         {
             ProcessStartInfo startInfo = new ProcessStartInfo();
             startInfo.FileName = "explorer.exe";
-            startInfo.Arguments = installPath;
+            startInfo.Arguments = Windows.OptionsWindow.txtInstallLocation.Text;
 
             // Start the process.
             Process.Start(startInfo);
+        }
+
+        private void OpenWeb_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start("https://github.com/NMSCD/Fractal413");
         }
     }
 }

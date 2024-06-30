@@ -15,10 +15,8 @@ namespace Install
     {
         public static void DoDownload()
         {
-            var folder = Statics.OptionsWindow.txtInstallLocation.Text;
-            string arguments = string.Format("-app 275850 -depot 275851 -manifest 3961348687487426672 -dir \"{0}\" -username {1} -password {2}", folder, Statics.LoginWindow.txtUsername.Text, Statics.LoginWindow.txtPassword.Password);
-            Statics.ProgressWindow.Show();
-            Download.DownloadActions.DoDownload(folder, Statics.LoginWindow.txtUsername.Text, Statics.LoginWindow.txtPassword.Password, DoDownloadCallback);
+            var folder = Windows.OptionsWindow.txtInstallLocation.Text;            
+            Download.DownloadActions.DoDownload(folder, Windows.LoginWindow.txtUsername.Text, Windows.LoginWindow.txtPassword.Password, DoDownloadCallback);
         }
 
         public static void DoDownloadCallback(Download.DownloadActions.DownloadActionType action, string message, float percentage)
@@ -26,11 +24,11 @@ namespace Install
             Application.Current.Dispatcher.Invoke(() =>
             {                
                 message = message.Trim();
-                Statics.ProgressWindow.SetProgress(message, percentage);
+                Windows.ProgressWindow.SetProgress(message, percentage);
 
                 if (action == Download.DownloadActions.DownloadActionType.Complete)
                 {
-                    string binariesFolder = Path.Combine(Statics.OptionsWindow.txtInstallLocation.Text, "Binaries");
+                    string binariesFolder = Path.Combine(Windows.OptionsWindow.txtInstallLocation.Text, "Binaries");
                     string keyFile = Path.Combine(binariesFolder, "NMS.exe");
                     Restore.RestoreActions.DoRestore(binariesFolder, keyFile, DoRestoreCallback);                    
                     return;
@@ -38,18 +36,17 @@ namespace Install
                 else if (action == Download.DownloadActions.DownloadActionType.Input)
                 {
 
-                    Statics.SteamGuardWindow.Show();
-                    Statics.SteamGuardWindow.txtMessage.Text = message;
-                    Statics.SteamGuardWindow.OnSteamGuardCodeEntered = code =>
+                    Windows.SteamGuardWindow.Show();
+                    Windows.SteamGuardWindow.txtMessage.Text = message;
+                    Windows.SteamGuardWindow.OnSteamGuardCodeEntered = code =>
                     {
                         Download.DownloadActions.SendResponse(code);
                     };
                 }
-                else if (action == Download.DownloadActions.DownloadActionType.Error)
+                else if (action == Download.DownloadActions.DownloadActionType.FatalError)
                 {
-                    Statics.ProgressWindow.Hide();
-                    Statics.LoginWindow.Show();
-                    Statics.LoginWindow.SetErrorText(message);
+                    Windows.WindowClose(Windows.ProgressWindow, Windows.LoginWindow);
+                    Windows.LoginWindow.SetErrorText(message);
                 }
             });
         }
@@ -59,7 +56,7 @@ namespace Install
             Application.Current.Dispatcher.Invoke(() =>
             {
                 message = message.Trim();
-                Statics.ProgressWindow.SetProgress(message);
+                Windows.ProgressWindow.SetProgress(message);
 
                 if (action == Restore.RestoreActions.RestoreActionType.Complete)
                 {
@@ -71,9 +68,9 @@ namespace Install
 
         public static void InstallVCRedist()
         {
-            if (Statics.OptionsWindow.chkInstallVCRuntime.IsChecked == true)
+            if (Windows.OptionsWindow.chkInstallVCRuntime.IsChecked == true)
             {
-                Statics.ProgressWindow.SetProgress("Installing Visual C++ Runtime...");
+                Windows.ProgressWindow.SetProgress("Installing Visual C++ Runtime...");
                 new Thread(() =>
                 {
                     try
@@ -93,7 +90,7 @@ namespace Install
                     }
                     catch (Exception ex)
                     {
-                        Statics.ProgressWindow.SetProgress("Error launching installer: " + ex.Message);
+                        Windows.ProgressWindow.SetProgress("Error launching installer: " + ex.Message);
                         Thread.Sleep(3000);
                     }
 
@@ -110,8 +107,8 @@ namespace Install
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                bool createDesktopIcons = (Statics.OptionsWindow.chkCreateShortcut.IsChecked == true);                
-                string installFolder = Statics.OptionsWindow.txtInstallLocation.Text;
+                bool createDesktopIcons = (Windows.OptionsWindow.chkCreateShortcut.IsChecked == true);                
+                string installFolder = Windows.OptionsWindow.txtInstallLocation.Text;
                 string binariesFolder = Path.Combine(installFolder, "Binaries\\");
                 string desktopFolder = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
@@ -130,10 +127,9 @@ namespace Install
                     shortcutName: "No Man's Sky Fractal 4.13 (Debug Version).lnk",
                     targetPath: Path.Combine(binariesFolder, "_RunAsDate.exe"),
                     iconLocation: Path.Combine(binariesFolder, "_icondebug.ico"),
-                    arguments: "/movetime 01\\01\\2022 \"" + Path.Combine(binariesFolder, "XGOG Release_x64.exe") + "\"");            
+                    arguments: "/movetime 01\\01\\2022 \"" + Path.Combine(binariesFolder, "XGOG Release_x64.exe") + "\"");
 
-                Statics.ProgressWindow.Hide();
-                (new CompleteWindow()).Show();
+                Windows.WindowClose(Windows.ProgressWindow, Windows.CompleteWindow);
             });
         }
 

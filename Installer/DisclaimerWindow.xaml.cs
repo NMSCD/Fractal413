@@ -27,7 +27,7 @@ namespace Install
 
         private void btnAccept_Click(object sender, RoutedEventArgs e)
         {            
-            Statics.OptionsWindow.Show();
+            Windows.OptionsWindow.Show();
             this.Close();
         }
 

@@ -66,8 +66,7 @@ namespace Install
                 return;
             }
 
-            Statics.LoginWindow.Show();
-            this.Hide();
+            Windows.WindowClose(this, Windows.LoginWindow);
         }
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
