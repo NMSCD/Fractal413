@@ -34,7 +34,7 @@ On February 22nd 2023, Hello Games released the Fractal update 4.10 on GOG.com. 
 
 The debug tools were first discovered and brought to light by [RayRod](https://www.youtube.com/@rayrodtv) who went on to share information how to use the features of the debug version. Without RayRod it's likely that this special version would have been missed, so thank you! 🙏
 
-The first mod that used the *nms.pdb* file was Lapig for his [Native Gyro on PC](https://www.nexusmods.com/nomanssky/mods/2665).
+The first mod that used the *nms.pdb* was [Native Gyro on PC](https://www.nexusmods.com/nomanssky/mods/2665) by Lapig.
 
 # How it Works
 For the first step - **Download** - the installer requires the user to have **a valid, purchased copy of No Man's Sky on Steam and provide their own Steam account details which the installer uses to download the game from Steam.** 
