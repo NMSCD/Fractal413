@@ -32,7 +32,9 @@ The *nms.pdb* file has been invaluable to the modding community, as it provides 
 # Background
 On February 22nd 2023, Hello Games released the Fractal update 4.10 on GOG.com. This version of the game included an *nms.pdb* file, as well as a debug version of No Man's Sky titled *XGOG Release_x64.exe*. These assets were also included in version 4.12 released March 1st 2023, and version 4.13 released March 8th 2023, publicly available to all users who purchased No Man's Sky through GOG.com. However in subsequent GOG releases, and Steam releases, these files were no longer included.
 
-The debug tools were first discovered and brought to light by [RayRod](https://www.youtube.com/@rayrodtv) who went on to share information how to use the features of the debug version. The first mod that used the *nms.pdb* file was Lapig for his [Native Gyro on PC](https://www.nexusmods.com/nomanssky/mods/2665). Without RayRod it's likely that this special version would have been missed, so thank you! 🙏
+The debug tools were first discovered and brought to light by [RayRod](https://www.youtube.com/@rayrodtv) who went on to share information how to use the features of the debug version. Without RayRod it's likely that this special version would have been missed, so thank you! 🙏
+
+The first mod that used the *nms.pdb* file was Lapig for his [Native Gyro on PC](https://www.nexusmods.com/nomanssky/mods/2665).
 
 # How it Works
 For the first step - **Download** - the installer requires the user to have **a valid, purchased copy of No Man's Sky on Steam and provide their own Steam account details which the installer uses to download the game from Steam.** 
