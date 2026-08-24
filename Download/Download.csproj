@@ -51,12 +51,12 @@
   <ItemGroup>
     <Content Include="DepotDownloader\DepotDownloader.dll" />
     <Content Include="DepotDownloader\DepotDownloader.exe" />
-    <Content Include="DepotDownloader\DepotDownloader.pdb" />
     <Content Include="DepotDownloader\protobuf-net.Core.dll" />
     <Content Include="DepotDownloader\protobuf-net.dll" />
     <Content Include="DepotDownloader\QRCoder.dll" />
     <Content Include="DepotDownloader\SteamKit2.dll" />
-    <Content Include="DepotDownloader\System.Collections.Immutable.dll" />
+    <Content Include="DepotDownloader\System.IO.Hashing.dll" />
+    <Content Include="DepotDownloader\ZstdSharp.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

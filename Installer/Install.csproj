@@ -75,6 +75,7 @@
     <Compile Include="ShortcutManager.cs" />
     <Compile Include="Windows.cs" />
     <Compile Include="Functions.cs" />
+    <Compile Include="DotNetCheck.cs" />
     <Compile Include="SteamGuardWindow.xaml.cs">
       <DependentUpon>SteamGuardWindow.xaml</DependentUpon>
     </Compile>
